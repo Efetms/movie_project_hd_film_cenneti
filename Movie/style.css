@@ -1,0 +1,1674 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: rgb(31, 29, 29);
+    
+}
+.logo {
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 200px; 
+    height: auto; 
+    object-fit: contain; 
+    cursor: pointer;
+}
+
+.nav-bar {
+    background: rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(10px);
+    position: fixed; 
+    top: 0;
+    z-index: 1000; 
+    padding: 10px 20px;
+   
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.nav-bar ul {
+    display: flex;
+}
+
+.nav-bar ul li {
+    list-style-type: none;
+    padding: 20px;
+
+}
+.creed-nav{
+    backdrop-filter: none;
+}
+ul li a {
+    padding-bottom: 5px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(255, 0, 0, 0);
+    transition: 0.3s all ease-in-out !important;
+    font-size: 18px;
+}
+
+ul li a:hover {
+    cursor: pointer;
+    border-bottom: 2px solid red;
+}
+
+.login {
+    padding: 20px;
+    text-align: center; 
+}
+.profile-menu {
+    display: none; /* Başlangıçta gizli */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    z-index: 1000;
+    list-style: none;
+    width: 200px;
+}
+
+.profile-menu.active {
+    display: block; /* Aktif olduğunda görünür */
+}
+
+.profile-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.profile-menu li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-menu li:last-child {
+    border-bottom: none;
+}
+
+.profile-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.profile-menu a:hover {
+    color: #e63946; /* Hover rengini istediğin gibi değiştirebilirsin */
+}
+
+.login button {
+    padding: 8px 20px; 
+    margin-right: 8px;
+    margin-bottom: 10px;
+    border-radius: 20px; 
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); 
+    position: relative;
+    overflow: hidden; 
+}
+
+.footer-top img{
+    width: 120px;
+}
+
+.mobile-and-tv-apps ul li {
+    width: 120px;
+}
+
+.mobile-and-tv-apps ul li img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.login button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+}
+
+.login button:hover::after {
+    left: 100%; 
+}
+
+#giris {
+    background: linear-gradient(to right, #e53935, #d32f2f); 
+    color: white; 
+    border: 1px solid #d32f2f;
+}
+
+#giris:hover {
+    background: linear-gradient(to right, #d32f2f, #ff6f61); 
+    box-shadow: 0 6px 10px rgba(211, 47, 47, 0.4); 
+    transform: translateY(-2px); 
+}
+
+#kayit {
+    background: white; 
+    color: #333; 
+    border: 1px solid #ccc;
+}
+/* Genel login alanı */
+.login {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+       
+ /* User Avatar Konteyneri */
+ .user-avatar {
+    font-size: 18px;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(142, 45, 226, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-decoration: none; /* Link alt çizgisini kaldır */
+}
+
+/* Avatar Üzerine Gelindiğinde Parlaklık Efekti */
+.user-avatar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    border-radius: 50%;
+}
+
+.user-avatar:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 20px rgba(142, 45, 226, 0.6);
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+}
+
+.user-avatar:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Avatar İçine Blur Efekti */
+.user-avatar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.user-avatar:hover::after {
+    opacity: 1;
+}
+
+/* Avatar Etrafında Işık Halkası */
+.user-avatar::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.user-avatar:hover::after {
+    opacity: 1;
+}
+
+/* Avatar İçinde Dönen Işık */
+.user-avatar .light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    animation: rotateLight 3s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.user-avatar:hover .light {
+    opacity: 1;
+}
+
+@keyframes rotateLight {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hoşgeldiniz mesajı alanı */
+
+
+/* Çıkış Yap butonu */
+.logout-btn {
+  background: linear-gradient(135deg, #ff4d4d, #cc0000);
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 77, 77, 0.3);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #cc0000, #990000);
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(255, 77, 77, 0.5);
+}
+
+/* Giriş ve Kayıt Ol butonları */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+}
+
+.login-btn {
+    background: linear-gradient(to right, #e53935, #d32f2f); 
+}
+
+.signup-btn {
+    background: white;
+    color: black;
+}
+
+.auth-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(255, 77, 77, 0.5);
+}
+
+/* Mobil uyum */
+@media screen and (max-width: 768px) {
+  .login {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .welcome-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .auth-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.modal-header {
+    background: #e53935;
+    color: white;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+
+.modal-body input {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+
+.modal-body .btn {
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-body .btn:hover {
+    background: #d32f2f;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+#kayit:hover {
+    background: #f9f9f9; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
+}
+
+
+
+
+
+
+
+
+.oynat {
+    width: 100%;
+    height: 800px;
+}
+.wrap-oynat{
+    margin-left: 20px;
+    padding: 50px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.innr-oynat{
+    width: 400px;
+    padding: 30px;
+    color: #fff;
+    margin-left: 10px;
+    margin-top: 150px
+}
+#oynat-h{
+    font-size: 60px;
+    color: white;
+}
+.oynat-p{
+    font-size: 16px;
+}
+.oynat-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.oynat-btn .material-icons {
+    font-size: 24px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.oynat-btn:hover {
+    background-color: white;
+    color: #151515;
+    border-color: #151515;
+}
+
+.oynat-btn:hover .material-icons {
+    color: #151515;
+}
+
+.oynat-liste-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: transparent       ;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.oynat-liste-btn .material-icons {
+    font-size: 24px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.oynat-liste-btn:hover {
+    background-color: white;
+    color: #151515;
+    border-color: #151515;
+}
+
+.oynat-liste-btn:hover .material-icons {
+    color: #151515;
+}
+.buton-container {
+    display: flex;
+    gap: 10px; 
+    align-items: center; 
+    margin-top: 0px; 
+}
+.film-list-title {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 4rem;
+    color: #e6d6d5; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    margin-bottom: 20px;
+    line-height: 1.2; 
+    margin-top: 60px;
+    margin-left: 20px;
+}.film-list-container {
+  position: relative;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.film-list-item{
+    display: flex;
+}
+
+.movie-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 280px;
+  text-align: center;
+  margin: 20px;
+  transition: all 0.3s ease; 
+}
+.movie-card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    
+}
+.movie-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  margin: 10px;
+  color: white;
+  font-size: 22px;
+}
+
+.movie-card p {
+  margin: 10px;
+  color: #90a4ae;
+}
+
+.movie-card .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: red;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.movie-card .btn:hover {
+  background-color: #cc11117c;
+}
+
+
+.filmler-title{
+    font-size: 35px !important;
+}
+
+
+
+.castPlayer img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.castPlayerImg{
+    width: 80px;
+    height: 80px;   
+ 
+}
+
+.castName p{
+    font-size: 14px;
+    margin-top: 10px;
+    color: white;
+}
+
+.karartSec{
+    position: absolute;
+    width: 1000px;
+    z-index: 1;
+    height: 100%;
+    background-image: linear-gradient(to right, rgb(0, 0, 0) , rgba(255, 255, 0, 0));
+}
+
+.castPlayer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.castPlayer{
+    width: 150px;
+    height: auto;
+}
+
+
+.oynInner-cast{
+    margin-top: 30px;
+    display: flex;
+}
+
+.castPlayerImg img{
+    width: 100%;
+    height: 100%;
+}
+
+.oynInner-btnSec{
+    display: flex;
+}
+
+.oynat-liste-btn{
+    margin-left: 10px;
+}
+
+.movieArea{
+    width: 100%;
+    height: 800px;
+}
+
+.oynInner-textSec{
+    width: 600px;
+    text-align: left;
+
+    p{
+        color: rgb(190, 190, 190);
+    }
+}
+
+.oynatSection{
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    height: 100%;
+    margin-left: 90px;
+    margin-top: 70px;
+    align-items: center;
+}
+.creed-karart{
+    height: 600px !important;
+}
+
+/* Swiper Alanı */
+.swiper {
+    width: 100%;
+    height: 900px;
+  }
+  
+  /* Slayt İçeriği */
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 900px !important;
+  }
+
+  .linkler ul li{
+    list-style: none;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+ .footer{
+    width: 90%;
+    margin: auto;
+    border-top : 4px solid;
+    padding-bottom: 2rem;
+ }
+.mobile-and-tv-apps ul{
+    display: flex;
+    list-style-type: none;
+   padding: 0;
+}
+.mobile-and-tv-apps ul li img{
+   
+    width: 150px;
+
+}
+
+.mobile-and-tv-apps ul li{
+    margin-left: 0px;
+}
+#google-play{
+    margin-left: 40px;
+}
+
+.mobile-and-tv-apps ul li a:hover img {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
+}
+
+.mobile-and-tv-apps ul li:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    border-radius: 8px; 
+}
+
+.social-icons  {
+    list-style-type: none;
+}
+
+
+.footer-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-top{
+    margin-top: 40px;
+}
+.footer-top img{
+    width: 300px;
+}
+.linkler ul {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    padding: 0;
+    list-style-type: none; 
+    align-items: center;
+}
+
+.linkler .item {
+    flex: 0 1 calc(40% - 70px); /* 4 sütun olacak şekilde genişlik ayarla */
+    margin-bottom:  10px;/* Satırlar arasında boşluk */
+}
+
+.linkler .item a {
+    text-decoration: none; 
+    color: white; 
+    font-size: 14px;
+}
+.footer-bottom {
+    background-color: #222; 
+    color: #fff; 
+    padding: 20px 0; 
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+  }
+  
+  .footer-bottom .copyright {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .footer-bottom .social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-bottom .social-icons li {
+    display: inline-block;
+    margin: 0 15px; 
+  }
+  
+  .footer-bottom .social-icons a {
+    color: #585c64;
+    font-size: 20px;
+    transition: all 0.3s ease; 
+  }
+  
+  .footer-bottom .social-icons a:hover {
+    color: #f7f7f7; 
+    transform: scale(1.2); 
+  }
+  
+  .footer-bottom .social-icons a i {
+    font-size: 24px; 
+  }
+  .social-icons a{
+    border-bottom: none;
+  }
+.social-icons a:hover{
+    border: none;
+}
+.sss-container{
+    position: relative;
+    margin-top: 50px;
+    padding: 40px;
+}
+.wrapper{
+   width: 80%;
+    margin-left: 200px;
+    background-color: red;
+   
+}
+.sss-title{
+    font-family: 'Poppins', sans-serif; 
+    font-size: 2rem;
+    color: #e6d6d5; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    margin-bottom: 20px;
+    line-height: 1.2; 
+    margin-top: 60px;
+    text-align: center;
+}
+.top{
+    width: 400px;
+    margin-top: 8px;
+}
+.container-kayit{
+    width: 450px;
+    height: 500px;
+   background: transparent;
+  padding: 0px;
+}
+.top h2{
+    color: #fff;
+    font-size: 28px !important;
+    margin-top: 20px;
+    margin-left: 7px;
+    margin-bottom: 6px;
+}
+.kayit-input{
+    width: 100%;
+    display: block;
+}
+.kayit-input input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 15px;
+    background: #2e2d2d;
+    border: none;
+    color: #fff;
+}
+.giris-input{
+    margin-top: 15px !important;
+}
+#kayit-wrap{
+    width: 100% !important;
+    padding: 10px;
+}
+.kayit-btn{
+width: 100% !important;
+background-color: red !important;
+border: none !important;
+color: #fff !important;
+padding: 10px !important;
+border-radius: 20px !important;
+font-size: 18px !important;
+margin-top: 10px !important;
+}
+#uye-hesap{
+    color: #ffffff9a ;
+    margin-left: 20px;
+}
+#uye-btn{
+    margin-left: 2px;
+}
+#uye-btn a{
+    text-decoration: none;
+    color: #fff;
+}
+.container-kayit .top{
+    display: flex;
+}
+.container-kayit .logo{
+    margin-left: 120px;
+    
+}
+.container-kayit .logo img{
+    width: 150px;
+}
+.kayit-btn:hover{
+    background-color: white !important;
+    color: #151515 !important;
+}
+.top{
+    margin-top: 5px;
+    height: 40px;
+    width: 500px;
+}
+.top .logo img{
+    margin-left: 40px;
+}
+
+
+
+.container-yorum{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+     color: #ffffff;
+}
+
+.container-yorum h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 28px;
+    border-bottom: 3px solid #ff5252;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.yorum-sayisi {
+    font-size: 16px;
+    color: #888;
+}
+
+.yorum-yap-bolumu,
+.yorumlar-bolumu {
+    width: 100%;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+}
+
+.yorum-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.yorum-form input[type="text"], textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.yorum-form input::placeholder, textarea::placeholder {
+    color: #777;
+}
+
+.btn-yorumForm{
+    background-color: #ff5252;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+    width: 150px;
+    text-align: center;
+}
+
+.btn-yorumForm:hover {
+    background-color: #e63e3e;
+}
+
+.yorum {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+}
+
+.yorum-icerik {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.yorum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.yorum-header strong {
+    color: black;
+    font-size: 18px;
+}
+
+.yorum-header .yorum-tarih {
+    font-size: 14px;
+    color: #888;
+}
+
+.yorum p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.yorum-footer {
+    display: flex;
+    gap: 10px;
+}
+
+#yorum-btn {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#yorum-btn:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 22px;
+    }
+
+    .yorum-header strong {
+        font-size: 16px;
+    }
+
+    .yorum-header .yorum-tarih {
+        font-size: 12px;
+    }
+
+    input[type="text"], textarea {
+        font-size: 14px;
+    }
+
+    button.btn, button.btn-yorum {
+        font-size: 14px;
+    }
+
+    .yorum p {
+        font-size: 14px;
+    }
+}
+
+.yorum strong{
+    color: rgb(255, 0, 0);
+}
+
+.yorum small{
+    color: gray;
+}
+
+
+
+
+#loading-container {
+    display: none; /* Başlangıçta gizli olacak */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(31, 29, 29);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #ff0404;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-text {
+    color: #f3f3f3;
+    font-size: 20px;
+    font-weight: bold;
+}
+/* Vurgulanan yorum stili */
+/* Vurgulanan yorum stili */
+.yorum.vurgulanan {
+    background: rgba(255, 255, 255, 0.13); /* Soluk bir arkaplan */
+    border-left: 5px solid rgb(160, 0, 0); /* Sol kenar çizgisi */
+    transition: background 0.3s, border-left 0.3s;
+}
+
+/* Yorum Butonları */
+.yorum-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* Butonları sağa hizala */
+    margin-top: 10px;
+}
+
+.sil-btn, .duzenle-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.sil-btn {
+    background-color: #e74c3c; /* Kırmızı arkaplan */
+    color: white; /* Beyaz yazı */
+}
+
+.sil-btn:hover {
+    background-color: #c0392b; /* Koyu kırmızı hover */
+    transform: translateY(-2px);
+}
+
+.duzenle-btn {
+    background-color: #3498db; /* Mavi arkaplan */
+    color: white; /* Beyaz yazı */
+}
+
+.duzenle-btn:hover {
+    background-color: #2980b9; /* Koyu mavi hover */
+    transform: translateY(-2px);
+}
+
+.sil-btn i, .duzenle-btn i {
+    color: white; /* İkonlar beyaz */
+}
+.duzenleme-metin {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical; /* Dikey boyutta yeniden boyutlandırma */
+}
+.video-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container video {
+    width: 80%;
+    max-height: 80vh;
+}
+
+.kapat-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: red;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* Video Player Styling */
+.video-player-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+
+/* Video Controls */
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.video-player-container:hover .video-controls {
+    opacity: 1;
+}
+
+.control-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.secondary-controls {
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.play-pause-btn, .volume-btn, .settings-btn, .fullscreen-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.2s;
+}
+
+.play-pause-btn {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.play-pause-btn:hover, .volume-btn:hover, 
+.settings-btn:hover, .fullscreen-btn:hover {
+    color: #e50914;
+    transform: scale(1.1);
+}
+
+.progress-container {
+    flex-grow: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #e50914;
+    border-radius: 3px;
+    width: 0%;
+    position: relative;
+    transition: width 0.1s linear;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: -3px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.progress-container:hover .progress-bar {
+    height: 8px;
+}
+
+.progress-container:hover .progress-bar::after {
+    opacity: 1;
+}
+
+.time-display {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.volume-slider {
+    width: 80px;
+    margin-left: 5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.volume-control:hover .volume-slider {
+    opacity: 1;
+}
+
+/* Modal Overrides */
+#videoModal .modal-content {
+    background: transparent;
+    border: none;
+}
+
+#videoModal .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all 0.3s;
+}
+
+#videoModal .btn-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+/* Loading Animation */
+.video-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #e50914;
+    animation: spin 1s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Fullscreen Styles */
+:-webkit-full-screen .video-player-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0;
+}
+
+:-moz-full-screen .video-player-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0;
+}
+
+:-ms-fullscreen .video-player-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0;
+}
+
+:fullscreen .video-player-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0;
+}
+
+/* Yakında gelecek kart stili */
+.movie-card.coming-soon {
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-card.coming-soon::after {
+    content: "YAKINDA";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+}
+
+.movie-card.coming-soon .btn {
+    display: none;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* Thor kartına özel stil */
+.movie-card.highlight {
+    position: relative;
+    border: 3px solid #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.movie-card.highlight::before {
+    content: "YENİ ÇIKTI!";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e50914;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 2;
+}
+/* Arama Kutusu Stilleri */
+/* YENİ MODERN ARAMA ÇUBUĞU */
+/* ANA ARAMA ÇUBUĞU STİLLERİ */
+
+/* ARAMA ÇUBUĞU STİLLERİ */
+.navbar.search {
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 20px;
+    padding: 0;
+    background: transparent !important;
+}
+
+#searchForm {
+    position: relative;
+    width: 100%;
+}
+
+.search-input {
+    border-radius: 25px 0 0 25px !important;
+    padding: 12px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    height: 50px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+.search-input:focus {
+    background-color: rgba(0,0,0,0.7);
+    box-shadow: 0 0 0 3px rgba(255,0,0,0.2);
+    border-color: rgba(255,0,0,0.5);
+    color: white;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.btn-outline-danger {
+    border-radius: 0 25px 25px 0 !important;
+    border: 1px solid rgba(255,0,0,0.5);
+    border-left: none;
+    padding: 0 25px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    min-width: 80px;
+}
+
+.btn-outline-danger:hover {
+    background: linear-gradient(135deg, #cc0000, #990000);
+    box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+}
+
+.btn-outline-danger .bi {
+    font-size: 18px;
+}
+
+/* ARAMA SONUÇLARI */
+#searchResults {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(20,20,20,0.95);
+    border-radius: 0 0 15px 15px;
+    border: 1px solid #333;
+    border-top: none;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    display: none;
+}
+
+#searchResults.show {
+    display: block;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.search-result-item:hover {
+    background-color: rgba(255,0,0,0.1);
+}
+
+.search-result-image {
+    width: 50px;
+    height: 75px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Thor filmi için özel arkaplan resmi */
+.search-result-item[data-film="thor"] .search-result-image {
+    background: url('/film/img/thor3.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Diğer filmler için default resim */
+.search-result-image:not([data-film="thor"]) {
+    background: url('/film/img/default_poster.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.search-result-image img {
+    display: none; /* Resim etiketini gizle, background kullanıyoruz */
+}
+
+.search-result-info {
+    flex-grow: 1;
+}
+
+.search-result-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Thor filmine özel stil */
+.search-result-item[data-film="thor"] .search-result-title {
+    color: #ffd700;
+    position: relative;
+}
+
+.search-result-item[data-film="thor"] .search-result-title::after {
+    content: "🔥";
+    margin-left: 5px;
+}
+
+.search-result-meta {
+    font-size: 0.8em;
+    color: rgba(255,255,255,0.7);
+}
+
+/* Yakında badge'i - sadece Thor olmayanlar için */
+.search-result-item:not([data-film="thor"]) .coming-soon-badge {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    padding: 3px 0;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.no-results {
+    padding: 15px;
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+}
+
+.error-message {
+    padding: 15px;
+    color: #ff6b6b;
+    text-align: center;
+}
+
+/* RESPONSIVE AYARLAR */
+@media (max-width: 992px) {
+    .navbar.search {
+        order: 3;
+        width: 100%;
+        margin: 15px 0 0 0;
+    }
+    
+    .search-input {
+        padding: 10px 15px;
+        height: 45px;
+    }
+    
+    .btn-outline-danger {
+        height: 45px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-input {
+        font-size: 14px;
+    }
+    
+    .btn-outline-danger .bi {
+        font-size: 16px;
+    }
+    
+    .search-result-image {
+        width: 40px;
+        height: 60px;
+    }
+}

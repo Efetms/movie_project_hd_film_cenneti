@@ -1,0 +1,34 @@
+<?php
+session_start();
+include("baglanti.php");
+
+if (!isset($_SESSION['kullanici_id'])) {
+    echo json_encode(['success' => false, 'message' => 'Oturum açılmamış!']);
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $yorum_id = intval($_POST['yorum_id']);
+    $yeni_yorum = trim($_POST['yeni_yorum']);
+    $kullanici_id = $_SESSION['kullanici_id'];
+
+    // Yorumun kullanıcıya ait olup olmadığını kontrol et
+    $sorgu = "SELECT * FROM yorumlar WHERE id = $yorum_id AND kullanici_id = $kullanici_id";
+    $sonuc = mysqli_query($baglanti, $sorgu);
+
+    if (mysqli_num_rows($sonuc) === 0) {
+        echo json_encode(['success' => false, 'message' => 'Bu yorumu düzenleme yetkiniz yok!']);
+        exit;
+    }
+
+    // Yorumu güncelle
+    $guncelleSorgu = "UPDATE yorumlar SET yorum = '$yeni_yorum' WHERE id = $yorum_id";
+    if (mysqli_query($baglanti, $guncelleSorgu)) {
+        echo json_encode(['success' => true, 'message' => 'Yorum başarıyla güncellendi.']);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Yorum güncellenirken bir hata oluştu: ' . mysqli_error($baglanti)]);
+    }
+} else {
+    echo json_encode(['success' => false, 'message' => 'Geçersiz istek metodu!']);
+}
+?>
