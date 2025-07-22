@@ -55,14 +55,15 @@ This project is a suitable study for practicing **session management, user opera
 
 > ![Ana Sayfa](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20181540.png)
 > ![Ana Sayfa](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20181622.png)
-> ![Film Arama Btn](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20181656.png)
-> ![Film Detay](screenshots/movie-detail.png)
-> ![Film Detay](screenshots/movie-detail.png)
-> ![Film Detay](screenshots/movie-detail.png)
-> ![Film Detay](screenshots/movie-detail.png)
-> ![Film Detay](screenshots/movie-detail.png)
-> ![Film Detay](screenshots/movie-detail.png)
-> ![Film Detay](screenshots/movie-detail.png)
+> ![SSS](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20181717.png)
+> ![Filmler](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20181747.png)
+> ![Profil Bilgileri](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20181929.png)
+> ![Yorum](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20182031.png)
+> ![Favorilerim](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20182056.png)
+> ![Yorumlarım](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20182105.png)
+> ![Kayıt Ol](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20182159.png)
+> ![Giriş Yap](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20182209.png)
+> ![Veritabanı ER](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20182901.png)
 
 
 ---
