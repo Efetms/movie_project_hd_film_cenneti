@@ -52,11 +52,11 @@ This project is a suitable study for practicing **session management, user opera
 
 > Ekran görüntülerini eklemek için aşağıya ekleyebilirsiniz:
 >
-> ```markdown
+
 > ![Ana Sayfa](https://github.com/Efetms/movie_project_hd_film_cenneti/blob/main/%C4%B0mages/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20181540.png)
 > ![Profil Sayfası](screenshots/profile.png)
 > ![Film Detay](screenshots/movie-detail.png)
-> ```
+
 
 ---
 
